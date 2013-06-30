@@ -2,27 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="051384ab-13ac-4e14-b3eb-616cae369c75" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/koetertag_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/koetertag_logo_small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/_flash.html.haml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/.keep" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/.gitkeep" afterPath="$PROJECT_DIR$/app/assets/stylesheets/layout.css.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/javascripts/angular/filters/.gitkeep" afterPath="$PROJECT_DIR$/app/assets/stylesheets/main.css.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/javascripts/angular/services/.gitkeep" afterPath="$PROJECT_DIR$/app/assets/stylesheets/pick_user.css.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/javascripts/angular/widgets/.gitkeep" afterPath="$PROJECT_DIR$/app/views/pages/pick_user.html.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/templates/.gitkeep" afterPath="$PROJECT_DIR$/app/views/pages/show.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.yml" afterPath="$PROJECT_DIR$/config/database.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main/index.html.haml" afterPath="$PROJECT_DIR$/app/views/main/index.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/main_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/main_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/layout.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/layout.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/pages_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/pages_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/pick_user.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/pick_user.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/pick_user.html.haml" afterPath="$PROJECT_DIR$/app/views/pages/pick_user.html.haml" />
     </list>
     <ignored path="koeter_tag.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +17,7 @@
     <file path="/main_controller.rb" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372590987583" ignored="false" />
     <file path="/Dummy.txt" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372588044525" ignored="false" />
     <file path="/test.hamlc" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1371908754778" ignored="false" />
-    <file path="/index.html.haml" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372274273595" ignored="false" />
+    <file path="/index.html.haml" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372594810130" ignored="false" />
     <file path="/main.css.scss" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372272916413" ignored="false" />
     <file path="/application.css" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1371914633782" ignored="false" />
     <file path="/user_session.rb" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1371984577214" ignored="false" />
@@ -52,13 +36,13 @@
     <file path="/users_controller.rb" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372019439801" ignored="false" />
     <file path="/Page.rb" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372271194769" ignored="false" />
     <file path="/20130626182700_create_pages.rb" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372271240568" ignored="false" />
-    <file path="/pages_controller.rb" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372594195429" ignored="false" />
+    <file path="/pages_controller.rb" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372595126948" ignored="false" />
     <file path="/show.html.haml" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372363533464" ignored="false" />
     <file path="/20130627193808_add_token_to_pages.rb" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372361983000" ignored="false" />
     <file path="/pick_user.html.haml" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372594056266" ignored="false" />
     <file path="/20130627194829_add_page_id_to_user.rb" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372362690310" ignored="false" />
     <file path="/page.rb" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372362569243" ignored="false" />
-    <file path="/pick_user.css.scss" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372593867469" ignored="false" />
+    <file path="/pick_user.css.scss" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372594848242" ignored="false" />
     <file path="/_flash.html.haml" changelist="051384ab-13ac-4e14-b3eb-616cae369c75" time="1372591642864" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +66,28 @@
       <file leaf-file-name="pages_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/pages_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="32" selection-start="661" selection-end="661" vertical-scroll-proportion="0.47864076">
+            <state line="7" column="79" selection-start="230" selection-end="230" vertical-scroll-proportion="0.11553398">
+              <folding>
+                <marker date="1372595127000" expanded="true" signature="45:419" placeholder=" ... end" />
+                <marker date="1372595127000" expanded="true" signature="150:375" placeholder=" ... end" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pick_user.html.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/pages/pick_user.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="31" selection-start="78" selection-end="78" vertical-scroll-proportion="-1.3076923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/main/index.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="35" selection-start="144" selection-end="165" vertical-scroll-proportion="-2.6153846">
               <folding />
             </state>
           </provider>
@@ -91,25 +96,16 @@
       <file leaf-file-name="pick_user.css.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pick_user.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="24" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0">
+            <state line="26" column="0" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <file leaf-file-name="layout.css.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/layout.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="91" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pick_user.html.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/pages/pick_user.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="332" selection-end="332" vertical-scroll-proportion="-7.1923075">
+            <state line="1" column="3" selection-start="26" selection-end="103" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -133,8 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js.coffee" />
-        <option value="$PROJECT_DIR$/db/migrate/20130627193808_add_token_to_pages.rb" />
         <option value="$PROJECT_DIR$/app/models/page.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20130627194829_add_page_id_to_user.rb" />
@@ -145,9 +139,11 @@
         <option value="$PROJECT_DIR$/app/controllers/main_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_flash.html.haml" />
         <option value="$PROJECT_DIR$/config/application.rb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/pick_user.css.scss" />
-        <option value="$PROJECT_DIR$/app/views/pages/pick_user.html.haml" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/pick_user.css.scss" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/layout.css.scss" />
+        <option value="$PROJECT_DIR$/app/views/main/index.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/pages/pick_user.html.haml" />
         <option value="$PROJECT_DIR$/app/controllers/pages_controller.rb" />
       </list>
     </option>
@@ -259,25 +255,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="koeter_tag" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="koeter_tag" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="initializers" />
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -292,6 +278,104 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="koeter_tag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="koeter_tag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="koeter_tag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="koeter_tag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="koeter_tag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="koeter_tag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="koeter_tag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="koeter_tag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="koeter_tag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="koeter_tag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -688,13 +772,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20130627194829_add_page_id_to_user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="20" selection-start="123" selection-end="123" vertical-scroll-proportion="0.049514562">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="18" selection-start="51" selection-end="51" vertical-scroll-proportion="0.033009708" />
@@ -713,13 +790,6 @@
     <entry file="file://$PROJECT_DIR$/lib/templates/haml/scaffold/_form.html.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/layout.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
@@ -764,31 +834,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/pick_user.html.haml">
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="332" selection-end="332" vertical-scroll-proportion="-7.1923075">
+        <state line="4" column="91" selection-start="238" selection-end="238" vertical-scroll-proportion="0.066019416">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/layout.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="91" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
+        <state line="1" column="3" selection-start="26" selection-end="103" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pick_user.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="24" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0">
+        <state line="26" column="0" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="35" selection-start="144" selection-end="165" vertical-scroll-proportion="-2.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/pick_user.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="31" selection-start="78" selection-end="78" vertical-scroll-proportion="-1.3076923">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/pages_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="32" selection-start="661" selection-end="661" vertical-scroll-proportion="0.47864076">
-          <folding />
+        <state line="7" column="79" selection-start="230" selection-end="230" vertical-scroll-proportion="0.11553398">
+          <folding>
+            <marker date="1372595127000" expanded="true" signature="45:419" placeholder=" ... end" />
+            <marker date="1372595127000" expanded="true" signature="150:375" placeholder=" ... end" />
+          </folding>
         </state>
       </provider>
     </entry>

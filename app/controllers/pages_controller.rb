@@ -5,7 +5,10 @@ class PagesController < ApplicationController
   before_filter :load_page, only: [:show, :pick_user, :user_picked]
 
   def show
+    session[:known_pages] = ((session[:known_pages] || []) << @page.token).uniq
+
     unless (@user = get_session_user_for_page)
+      Rails.logger.debug @user
       redirect_to pick_user_url(@page.token)
       return
     end
@@ -57,12 +60,7 @@ class PagesController < ApplicationController
 
   def get_session_user_for_page
     return false unless (user_id = session["user-#{@page.id}"])
-
-    begin
-      User.find(user_id)
-    rescue ActiveRecord::RecordNotFound
-      return false
-    end
+    return User.where(id: user_id, page_id: @page.id).first
   end
 
   def get_available_users

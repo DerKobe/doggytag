@@ -1,6 +1,6 @@
 - @title = { black: 'Wer', blue: 'bist du?' }
 
-#pick-user
+#pick-user.available-items-list
   = form_for @user, url: user_picked_path, method: :post, html: { class: 'form-inline', id: 'new-user' } do |f|
     - if @user.errors.any?
       .alert.alert-error

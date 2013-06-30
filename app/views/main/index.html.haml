@@ -1,2 +1,14 @@
 %center
+  %br
   = link_to 'Neue Seite anlegen', new_page_path, method: :post, class: 'btn btn-large btn-primary', id: 'new-page'
+
+  #known-pages.available-items-list
+    - if session[:known_pages].present? && session[:known_pages].any?
+      %h2 Bekannte KöterPads
+      %ul.unstyled
+        - session[:known_pages].each do |page|
+          -#%li= Pages.find(page).name
+          %li
+            %a.btn.btn-inverse{ href: page_url(page) }= page
+
+
