@@ -7,8 +7,7 @@
       %h2 Bekannte KöterPads
       %ul.unstyled
         - session[:known_pages].each do |page|
-          -#%li= Pages.find(page).name
           %li
-            %a.btn.btn-inverse{ href: page_url(page) }= page
+            %a.btn.btn-inverse{ href: page_url(page) }= Page.find(page).name
 
 

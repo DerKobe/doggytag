@@ -8,7 +8,8 @@
   %body
     %center
       %h1
-        = image_tag 'koetertag_logo_small.png'
+        = link_to :root do
+          = image_tag 'koetertag_logo_small.png'
         %span.brand= @title[:black]
         %span.claim= @title[:blue]
 
