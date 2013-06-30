@@ -2,9 +2,20 @@
 %html
   %head
     %title KoeterTag
-    = stylesheet_link_tag    "application", media: "all"
-    = javascript_include_tag "application"
+    = stylesheet_link_tag "application", media: "all"
     = csrf_meta_tags
 
   %body
-    = yield
+    %center
+      %h1
+        = image_tag 'koetertag_logo_small.png'
+        %span.brand= @title[:black]
+        %span.claim= @title[:blue]
+
+      = render 'layouts/flash'
+
+      = yield
+
+    -#= javascript_include_tag '//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js'
+    -#= javascript_include_tag '//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js'
+    = javascript_include_tag "application"

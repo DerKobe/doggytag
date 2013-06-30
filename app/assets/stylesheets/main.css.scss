@@ -1,0 +1,23 @@
+@import "twitter/bootstrap";
+
+h1 {
+  background-color: whitesmoke;
+  border: 1px solid #e3e3e3;
+  margin: 0;
+  padding: 10px 0;
+
+  span {
+    font-size: 50px;
+    position: relative;
+    top: 8px;
+    text-shadow: 0 -1px 1px #666666, 0 1px 1px #FFFFFF;
+
+    &.claim { color: #4e90ff; }
+  }
+}
+
+#new-page {
+  font-size: 26px;
+  padding: 30px 50px;
+  font-weight: bold;
+}

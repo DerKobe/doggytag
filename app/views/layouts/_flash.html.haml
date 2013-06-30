@@ -1,0 +1,11 @@
+- if flash[:error]
+  .row
+    .alert.alert-error.span12
+      %center
+        %strong Fehler -
+        = flash[:error]
+- if flash[:success]
+  .row
+    .alert.alert-success.span12
+      %center
+        %strong= flash[:success]
