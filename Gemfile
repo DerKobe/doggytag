@@ -9,6 +9,7 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'
 gem 'bootstrap-sass-rails'
+gem 'font-awesome-sass-rails'
 
 gem 'simple_form'
 

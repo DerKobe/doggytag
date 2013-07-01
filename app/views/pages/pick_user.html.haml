@@ -12,7 +12,8 @@
     .input-append
       = f.text_field :name, placeholder: 'Mein Name ist'
       = f.button class: 'btn btn-success' do
-        los geht's
+        %i.icon-plus
+        %i.icon-user
 
   - unless @available_users.empty?
 
@@ -24,4 +25,6 @@
     %ul#available-users.unstyled
       - @available_users.each do |user|
         %li
-          %a.btn.btn-inverse{ href: "#{user_picked_url}?user_id=#{user.id}" }= user.name
+          %a.btn.btn-inverse{ href: "#{user_picked_url}?user_id=#{user.id}" }
+            %i.icon-user
+            = user.name
