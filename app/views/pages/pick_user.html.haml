@@ -1,30 +1,31 @@
 - @title = { black: 'Wer', blue: 'bist du?' }
 
-#pick-user.available-items-list
-  = form_for @user, url: user_picked_path, method: :post, html: { class: 'form-inline', id: 'new-user' } do |f|
-    - if @user.errors.any?
-      .alert.alert-error
-        .content
-          %ul
-            - @user.errors.full_messages.each do |msg|
-              %li= msg
+%center
+  #pick-user.available-items-list
+    = form_for @user, url: user_picked_path, method: :post, html: { class: 'form-inline', id: 'new-user' } do |f|
+      - if @user.errors.any?
+        .alert.alert-error
+          .content
+            %ul
+              - @user.errors.full_messages.each do |msg|
+                %li= msg
 
-    .input-append
-      = f.text_field :name, placeholder: 'Mein Name ist'
-      = f.button class: 'btn btn-success' do
-        %i.icon-plus
-        %i.icon-user
+      .input-append
+        = f.text_field :name, placeholder: 'Mein Name ist'
+        = f.button class: 'btn btn-success' do
+          %i.icon-plus
+          %i.icon-user
 
-  - unless @available_users.empty?
+    - unless @available_users.empty?
 
-    .separator
-      %span.line
-      %span.middle ODER
-      %span.line
+      .separator
+        %span.line
+        %span.middle ODER
+        %span.line
 
-    %ul#available-users.unstyled
-      - @available_users.each do |user|
-        %li
-          %a.btn.btn-inverse{ href: "#{user_picked_url}?user_id=#{user.id}" }
-            %i.icon-user
-            = user.name
+      %ul#available-users.unstyled
+        - @available_users.each do |user|
+          %li
+            %a.btn.btn-inverse{ href: "#{user_picked_url}?user_id=#{user.id}" }
+              %i.icon-user
+              = user.name

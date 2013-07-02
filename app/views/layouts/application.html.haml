@@ -4,6 +4,12 @@
     %title KoeterTag
     = stylesheet_link_tag "application", media: "all"
     = csrf_meta_tags
+    = javascript_include_tag "http://ajaxorg.github.com/ace/build/src/ace.js"
+    - host = root_url(:port => 8000, :only_path => false)
+    = javascript_include_tag "#{host}channel/bcsocket.js"
+    = javascript_include_tag "#{host}share/share.js"
+    = javascript_include_tag "#{host}share/ace.js"
+    = javascript_include_tag "application"
 
   %body
     %center
@@ -15,8 +21,4 @@
 
       = render 'layouts/flash'
 
-      = yield
-
-    -#= javascript_include_tag '//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js'
-    -#= javascript_include_tag '//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js'
-    = javascript_include_tag "application"
+    = yield

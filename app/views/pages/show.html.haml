@@ -1,5 +1,13 @@
-Pages show
+- set_title @page.name
 
-%ul
+.container
+  .row
+    .span12
+      #ace-editor{ style: 'height:500px;width:900px;' }
+
+%ul{ style: 'display:none' }
   %li= @user.inspect
   %li= @page.inspect
+
+:javascript
+  window.current_page_token = "channel_#{@page.token}";

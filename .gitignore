@@ -2,4 +2,4 @@
 /log/*.log
 /tmp
 /.idea
-.idea/
+/sharejs_server/node_modules
