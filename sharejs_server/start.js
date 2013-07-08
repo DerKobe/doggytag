@@ -6,16 +6,14 @@ var connect = require('connect'),
 var server = connect(
     connect.logger(),
     connect.static(__dirname + '/my_html_files')
-    // 'Access-Control-Allow-Origin: *'
 );
 
 var options = {
     db: {
-        type: 'none'
+        type: 'redis'
     },
-    origin: "bigmac.local:3000",
     browserChannel: {
-        cors: '*'
+        cors: 'http://doggytag.net'
     }
 }; // See docs for options. {type: 'redis'} to enable persistance.
 

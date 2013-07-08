@@ -1,4 +1,21 @@
 development:
   adapter: postgresql
+  encoding: utf8
+  template: template0
+  collation: de_DE.UTF8 
+  ctype: de_DE.UTF8 
   database: koetertag_development
+  username: vagrant
+  password: vagrant
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  template: template0
+  collation: de_DE.UTF8
+  ctype: de_DE.UTF8
+  database: koetertag_test
+  username: vagrant
+  password: vagrant
   host: localhost

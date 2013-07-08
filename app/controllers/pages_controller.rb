@@ -17,7 +17,7 @@ class PagesController < ApplicationController
   end
 
   def create
-    page = Page.create! name: 'KöterTag To The Rescue!', token: SecureRandom.hex
+    page = Page.create! name: 'DoggyTag To The Rescue!', token: SecureRandom.hex
     redirect_to page_url(page.token)
   end
 
