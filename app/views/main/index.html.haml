@@ -2,12 +2,27 @@
   %br
   = link_to 'Neue Seite anlegen', new_page_path, method: :post, class: 'btn btn-large btn-primary', id: 'new-page'
 
-  #known-pages.available-items-list
+  #known-pages
     - if session[:known_pages].present? && session[:known_pages].any?
-      %h2 Bekannte KöterPads
-      %ul.unstyled
-        - session[:known_pages].each do |page|
-          %li
-            %a.btn.btn-inverse{ href: page_url(page) }
-              %i.icon-list
-              = Page.find_by_token(page).name
+      %h2 Bekannte DoggyTag Seiten
+      .available-items-list
+        %ul.unstyled
+          - session[:known_pages].each do |page|
+            %li
+              %a.btn.btn-inverse{ href: page_url(page) }
+                %i.icon-list
+                = Page.find_by_token(page).name
+
+  #about-doggytag
+    .big-text Ich bin neu hier!
+    .big-text Was mach ich jetzt?
+    .text-block
+      Phosfluorescently recaptiualize collaborative products before enabled initiatives. Uniquely network revolutionary customer service and frictionless channels. Assertively coordinate just in time value whereas maintainable services. Dynamically pontificate diverse e-services without cross-unit mindshare. Proactively develop emerging web services via frictionless technologies.
+      Globally leverage other's tactical best practices for visionary quality vectors. Interactively network innovative metrics with just in time expertise. Holisticly implement extensible relationships without competitive collaboration and idea-sharing. Holisticly negotiate strategic customer service rather than cutting-edge resources. Credibly disintermediate corporate networks whereas focused meta-services.
+      Collaboratively deliver cross-media products with cooperative experiences. Interactively negotiate competitive data before real-time opportunities. Rapidiously utilize standards compliant products through corporate imperatives. Progressively synergize emerging interfaces after B2C platforms. Phosfluorescently redefine team driven technology via performance based web-readiness.
+      Globally myocardinate covalent alignments for goal-oriented action items. Rapidiously build accurate growth strategies rather than client-focused metrics. Competently optimize flexible information and next-generation synergy. Rapidiously drive state of the art communities whereas an expanded array of customer service. Globally embrace resource maximizing technologies via bleeding-edge relationships.
+      Seamlessly benchmark end-to-end ideas vis-a-vis covalent supply chains. Appropriately impact 24/365 results vis-a-vis standards compliant markets. Intrinsicly parallel task ethical e-services via resource-leveling infomediaries. Synergistically facilitate 2.0 leadership without premium partnerships. Progressively conceptualize fully researched sources vis-a-vis cross functional web-readiness.
+      Phosfluorescently leverage other's optimal best practices whereas high-quality materials. Authoritatively exploit excellent processes for open-source initiatives. Compellingly enable high standards in web services for ubiquitous e-commerce. Credibly supply standardized total linkage without standards compliant quality vectors.
+
+  #doggy
+    = image_tag 'doggytag_logo.png'

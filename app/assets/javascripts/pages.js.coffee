@@ -1,9 +1,28 @@
 $ ->
   if $('#ace-editor').length > 0
     editor = ace.edit 'ace-editor'
+
     editor.setTheme 'ace/theme/chrome'
     editor.setPrintMarginColumn 1000
+    editor.getSession().setUseWrapMode(true)
+    editor.renderer.setShowGutter(false)
 
     sharejs.open "channel_#{window.current_page_token}", 'text', "http://doggytag.net:8000/channel", (error, doc)->
       doc.attach_ace editor
       editor.focus()
+
+    height_update_function = =>
+      screen_length = editor.getSession().getScreenLength()
+      screen_length = 20 if screen_length < 20
+      newHeight = screen_length * editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+
+      $('#ace-editor').height(newHeight.toString() + "px")
+      $('#editor-wrapper').height(newHeight.toString() + "px")
+
+      editor.resize()
+
+    # Set initial size to match initial content
+    height_update_function()
+
+    # Whenever a change happens inside the ACE editor, update the size again
+    editor.getSession().on('change', height_update_function)

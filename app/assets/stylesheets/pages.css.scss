@@ -1,3 +1,15 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "twitter/bootstrap/mixins";
+
+#editor-wrapper {
+
+  #ace-editor {
+    color: #275DB9;
+    background-color: #f8f8f8;
+  }
+  .ace_scrollbar {
+    display: none !important;
+  }
+  .ace-chrome .ace_marker-layer .ace_active-line {
+    background: rgba(0, 0, 0, 0.02);
+  }
+}

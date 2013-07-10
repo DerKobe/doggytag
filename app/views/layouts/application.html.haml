@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title DoggyTag - Easy Organisation
+    %title DoggyTag - Easy Organization
     = stylesheet_link_tag "application", media: "all"
     = csrf_meta_tags
     = javascript_include_tag "http://ajaxorg.github.com/ace/build/src/ace.js"
@@ -11,14 +11,19 @@
     = javascript_include_tag "#{host}share/ace.js"
     = javascript_include_tag "application"
 
-  %body
-    %center
-      %h1
-        = link_to :root do
-          = image_tag 'koetertag_logo_small.png'
-        %span.brand= @title[:black]
-        %span.claim= @title[:blue]
+  %body{ id: "#{params[:controller]}-#{params[:action]}", class: "controller-#{params[:controller]} action-#{params[:action]}" }
+    - unless browser.ie?# || ( browser.firefox? && !browser.modern? )
+      %center
+        %h1
+          = link_to :root do
+            = image_tag 'doggytag_logo_small.png'
+          %span.brand= @title[:black]
+          %span.doggy-blue= @title[:blue]
 
-      = render 'layouts/flash'
+        = render 'layouts/flash'
 
-    = yield
+      = yield
+
+    - else
+      %h1 So nicht!
+      %h2 Internet Explorer macht Doggy traurig. Schäm dich und komm mit einem richtigen Browser wieder!

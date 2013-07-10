@@ -1,7 +1,7 @@
 class MainController < ApplicationController
 
   def index
-    @title = { black: 'DoggyTag', blue: 'Easy Organisation' }
+    @title = { black: 'DoggyTag', blue: 'Easy Organization' }
   end
 
 end
