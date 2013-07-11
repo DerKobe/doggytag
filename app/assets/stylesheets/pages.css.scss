@@ -1,15 +1,60 @@
-@import "twitter/bootstrap/mixins";
+@import 'twitter/bootstrap/mixins';
 
-#editor-wrapper {
+.component {
+  margin-bottom: 10px;
 
-  #ace-editor {
-    color: #275DB9;
+  .title-bar {
+    color: #f8f8f8;
+    height: 54px;
+    background-color: #4e90ff;
+    padding: 1px 20px 3px 15px;
+    @include border-top-left-radius($radius: 15px);
+    @include border-top-right-radius($radius: 15px);
+
+    .actions a {
+      color: #f8f8f8;
+      i {
+        padding: 4px 6px 5px 6px;
+      }
+
+      &:hover {
+        text-decoration: none;
+        i {
+          color: #4e90ff;
+          background-color: #f8f8f8;
+          @include border-radius($radius: 15px);
+        }
+      }
+    }
+  }
+
+  .content-bar {
+    clear: both;
+    border-left: 1px solid #4e90ff;
+    border-right: 1px solid #4e90ff;
     background-color: #f8f8f8;
+    padding: 10px 10px 0px;
+
+    #ace-editor {
+      font-size: 16px;
+      color: #275DB9;
+      background-color: #f8f8f8;
+    }
+    .ace_scrollbar {
+      display: none !important;
+    }
+    .ace-chrome .ace_marker-layer .ace_active-line {
+      background: rgba(0, 0, 0, 0.02);
+    }
   }
-  .ace_scrollbar {
-    display: none !important;
-  }
-  .ace-chrome .ace_marker-layer .ace_active-line {
-    background: rgba(0, 0, 0, 0.02);
+
+  .footer {
+    height:15px;
+    background-color: #f8f8f8;
+    border-left: 1px solid #4e90ff;
+    border-right: 1px solid #4e90ff;
+    border-bottom: 1px solid #4e90ff;
+    @include border-bottom-left-radius($radius: 15px);
+    @include border-bottom-right-radius($radius: 15px);
   }
 }

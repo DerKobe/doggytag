@@ -1,15 +1,15 @@
 !!!
 %html
   %head
-    %title DoggyTag - Easy Organization
+    %title DoggyTag - Easy Organisation
     = stylesheet_link_tag "application", media: "all"
     = csrf_meta_tags
-    = javascript_include_tag "http://ajaxorg.github.com/ace/build/src/ace.js"
+    = javascript_include_tag 'http://ajaxorg.github.com/ace/build/src/ace.js'
     - host = root_url(:port => 8000, :only_path => false)
     = javascript_include_tag "#{host}channel/bcsocket.js"
     = javascript_include_tag "#{host}share/share.js"
     = javascript_include_tag "#{host}share/ace.js"
-    = javascript_include_tag "application"
+    = javascript_include_tag 'application'
 
   %body{ id: "#{params[:controller]}-#{params[:action]}", class: "controller-#{params[:controller]} action-#{params[:action]}" }
     - unless browser.ie?# || ( browser.firefox? && !browser.modern? )

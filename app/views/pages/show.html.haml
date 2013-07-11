@@ -3,8 +3,52 @@
 .container
   .row
     .span12
-      #editor-wrapper.box-shadow.outline
-        #ace-editor
+      #components
+
+        -# Text
+        .component
+          .title-bar
+            %h3
+              .title-text.pull-left
+                Text
+              .actions.pull-right
+                %a.toggle-component{ href: '#' }
+                  %i.icon-chevron-up
+                  %i.icon-chevron-down{ style: 'display:none' }
+
+          .content-bar
+            #ace-editor
+          .footer
+
+        -# Terminfindung
+        .component
+          .title-bar
+            %h3
+              .title-text.pull-left
+                Terminfindung
+              .actions.pull-right
+                %a.toggle-component{ href: '#' }
+                  %i.icon-chevron-up{ style: 'display:none' }
+                  %i.icon-chevron-down
+
+          .content-bar{ style: 'display:none' }
+            TODO Terminfindung
+          .footer
+
+        -# Abstimmung
+        .component
+          .title-bar
+            %h3
+              .title-text.pull-left
+                Abstimmung
+              .actions.pull-right
+                %a.toggle-component{ href: '#' }
+                  %i.icon-chevron-up{ style: 'display:none' }
+                  %i.icon-chevron-down
+
+          .content-bar{ style: 'display:none' }
+            TODO Abstimmung
+          .footer
 
 :javascript
   window.current_page_token = "channel_#{@page.token}";
