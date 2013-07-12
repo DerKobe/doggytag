@@ -1,8 +1,14 @@
 - set_title @page.name
 
+#user{ 'data-name' => @user.name, style: 'didsplay:none' }
+
 .container
   .row
     .span12
+
+      #chat
+        %input{ type: 'text', style: 'display:none' }
+
       #components
 
         -# Text

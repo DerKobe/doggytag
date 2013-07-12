@@ -1,6 +1,7 @@
 /*
  *= require twitter/bootstrap
  *= require _font-awesome
+ *= require toastr
  *= require_self
  *= require_tree .
  */

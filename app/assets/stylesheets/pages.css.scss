@@ -22,7 +22,7 @@
         i {
           color: #4e90ff;
           background-color: #f8f8f8;
-          @include border-radius($radius: 15px);
+          @include border-radius($radius: 20px);
         }
       }
     }

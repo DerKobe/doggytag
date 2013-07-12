@@ -9,7 +9,7 @@
         %ul.unstyled
           - session[:known_pages].each do |page|
             %li
-              %a.btn.btn-inverse{ href: page_url(page) }
+              %a.btn.btn-inverse.btn-large{ href: page_url(page) }
                 %i.icon-list
                 = Page.find_by_token(page).name
 

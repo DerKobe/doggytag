@@ -26,6 +26,6 @@
       %ul#available-users.unstyled
         - @available_users.each do |user|
           %li
-            %a.btn.btn-inverse{ href: "#{user_picked_url}?user_id=#{user.id}" }
+            %a.btn.btn-inverse.btn-large{ href: "#{user_picked_url}?user_id=#{user.id}" }
               %i.icon-user
               = user.name

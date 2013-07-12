@@ -5,9 +5,10 @@
     = stylesheet_link_tag "application", media: "all"
     = csrf_meta_tags
     = javascript_include_tag 'http://ajaxorg.github.com/ace/build/src/ace.js'
-    - host = root_url(:port => 8000, :only_path => false)
+    - host = root_url(port: 8000, only_path: false)
     = javascript_include_tag "#{host}channel/bcsocket.js"
     = javascript_include_tag "#{host}share/share.js"
+    = javascript_include_tag "#{host}share/json.js"
     = javascript_include_tag "#{host}share/ace.js"
     = javascript_include_tag 'application'
 
