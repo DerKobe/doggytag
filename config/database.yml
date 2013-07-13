@@ -26,7 +26,7 @@ production:
   template: template0
   collation: de_DE.UTF8
   ctype: de_DE.UTF8
-  database: koetertag_test
+  database: doggytag
   username: doggy
   password: kubRestuvE4Esp8brET5AcrAfrAcr6Ce
   host: localhost

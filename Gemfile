@@ -34,15 +34,15 @@ end
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+#gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.4.2'
+#gem 'jbuilder', '~> 1.4.2'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
+#group :doc do
+#  # bundle exec rake doc:rails generates the API under doc/api.
+#  gem 'sdoc', require: false
+#end
 
 gem 'browser'
 
@@ -53,7 +53,10 @@ gem 'browser'
 gem 'thin'
 
 # Use Capistrano for deployment
-gem 'capistrano', group: :development
+group :development do
+  gem 'capistrano'
+  gem 'capistrano_colors'
+end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
