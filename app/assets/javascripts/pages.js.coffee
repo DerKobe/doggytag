@@ -40,18 +40,53 @@ $ ->
         $target.parent().find('i').toggle()
 
     sharejs.open "chat_#{window.current_page_token}", 'json', 'http://doggytag.net:8000/channel', (error, doc)->
-      $chat_input = $('#chat input')
+      $chat = $('#chat').show()
+      $chat_input = $chat.find('input')
+
+      # user data
       $user = $('#user')
 
-      doc.set( { chat: [] } ) if doc.get() == null || true
+      # options for that messages
+      toastr.options = {
+        timeOut: 0,
+        extendedTimeOut: 0,
+        tapToDismiss: false,
+        fadeOut: 150
+      }
+
+      doc.set( { chat: [] } ) if doc.get() == null
       chat = doc.at('chat')
 
-      doc.on 'change', (op)=>
-        toastr.info(op[0].li.text, op[0].li.name) if op?[0].p[0] == 'chat'
+      show_chat_message = (message)=>
+        title = "<span class=\"name\">#{_.escape message.name}</span> schrieb um #{_.escape message.time}"
+        if message.name == $user.data('name')
+          toastr.info(_.escape(message.text), title)
+        else
+          toastr.success(_.escape(message.text), title)
 
-      $chat_input.show().on 'keydown', (event)=>
+      if (chat_history = chat.get()).length > 0
+        _(chat_history).slice(0,15).reverse().each (message)=>show_chat_message(message)
+
+      # new message?
+      doc.on 'change', (op)=>
+        name = op[0].li.name
+        text = op[0].li.text
+        time = op[0].li.time
+
+        if op?[0].p[0] == 'chat'
+          show_chat_message({name:name, text:text, time:time})
+
+      $chat_input.on 'keydown', (event)=>
         if event.keyCode == 13 || event.keyCode == 27
           event.preventDefault()
-          message = { name: $user.data('name'), text: $chat_input.val() }
+          message = {
+            name: $user.data('name'),
+            text: $chat_input.val(),
+            time: moment().format('H:mm')
+          }
           chat.insert(0, message) if event.keyCode == 13 && $chat_input.val('') != ''
           $chat_input.val('').focus()
+
+      $chat.find('a').on 'click', (event)->
+        event.preventDefault()
+        toastr.clear()

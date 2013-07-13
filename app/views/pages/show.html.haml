@@ -1,13 +1,14 @@
 - set_title @page.name
 
+#chat{ style: 'display:none' }
+  %input{ type: 'text', placeholder: 'Nachricht schreiben' }
+  %a{ href: '#' } Verlauf löschen
+
 #user{ 'data-name' => @user.name, style: 'didsplay:none' }
 
 .container
   .row
     .span12
-
-      #chat
-        %input{ type: 'text', style: 'display:none' }
 
       #components
 
@@ -26,19 +27,19 @@
             #ace-editor
           .footer
 
-        -# Terminfindung
+        -# Termin
         .component
           .title-bar
             %h3
               .title-text.pull-left
-                Terminfindung
+                Termin
               .actions.pull-right
                 %a.toggle-component{ href: '#' }
                   %i.icon-chevron-up{ style: 'display:none' }
                   %i.icon-chevron-down
 
           .content-bar{ style: 'display:none' }
-            TODO Terminfindung
+            TODO Termin
           .footer
 
         -# Abstimmung
@@ -54,6 +55,21 @@
 
           .content-bar{ style: 'display:none' }
             TODO Abstimmung
+          .footer
+
+        -# ToDo Liste
+        .component
+          .title-bar
+            %h3
+              .title-text.pull-left
+                ToDo Liste
+              .actions.pull-right
+                %a.toggle-component{ href: '#' }
+                  %i.icon-chevron-up{ style: 'display:none' }
+                  %i.icon-chevron-down
+
+          .content-bar{ style: 'display:none' }
+            TODO ToDo Liste
           .footer
 
 :javascript

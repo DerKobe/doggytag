@@ -58,3 +58,33 @@
     @include border-bottom-right-radius($radius: 15px);
   }
 }
+
+#chat {
+  z-index: 1000000;
+  position: fixed;
+  right: 11px;
+  top: 10px;
+  width: 270px;
+  padding: 15px 15px 5px 15px ;
+  background-color: #e3e3e3;
+  border: 1px solid #bababa;
+  @include border-radius($radius: 5px);
+  @include box-shadow(0 0 12px #999);
+
+  input {
+    width: 260px;
+    margin: 0;
+  }
+
+  a {
+    color: #b0b0b0;
+    font-size: 10px;
+    margin: 0;
+    line-height: 1em;
+  }
+}
+
+.toast-title .name {
+  font-weight: bold;
+  font-style: italic;
+}

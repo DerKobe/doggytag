@@ -260,9 +260,9 @@
         })();
     });
 }(typeof define === 'function' && define.amd ? define : function (deps, factory) {
-        if (typeof module !== 'undefined' && module.exports) { //Node
-            module.exports = factory(require('jquery'));
-        } else {
-            window['toastr'] = factory(window['jQuery']);
-        }
-    }));
+    if (typeof module !== 'undefined' && module.exports) { //Node
+        module.exports = factory(require('jquery'));
+    } else {
+        window['toastr'] = factory(window['jQuery']);
+    }
+}));
