@@ -104,8 +104,9 @@ $ ->
         $user_labels.empty()
         _(statuses).each (timestamp, name)=>
           now = moment().format('X')
-          if timestamp > now - 2
-            $user_labels.append( $("<div class=\"label label-success\">#{name}</div>") )
+          if timestamp > now - 10
+            label = if name == $user.data('name') then 'info' else 'success'
+            $user_labels.append( $("<div class=\"label label-#{label}\">#{name}</div>") )
 
       update_online_status = =>
         user = $user.data('name')
@@ -113,6 +114,6 @@ $ ->
         my_status.set(moment().format('X'))
 
       update_online_status()
-      setInterval(update_online_status, 1000);
+      setInterval(update_online_status, 5000);
 
       doc.on 'change', render_users_online_status_bar
