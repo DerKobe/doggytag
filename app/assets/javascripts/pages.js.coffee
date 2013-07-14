@@ -64,7 +64,10 @@ $ ->
       chat = doc.at('chat')
 
       show_chat_message = (message)=>
-        title = "<span class=\"name\">#{_.escape message.name}</span> schrieb um #{_.escape message.time}"
+        time = moment(new Date(message.time * 1000))
+        format = if moment().diff(time, 'days') == 0 then '[um] H:mm' else '[am] D.M.YYYY H:mm'
+
+        title = "<span class=\"name\">#{_.escape message.name}</span> schrieb #{time.format(format)}"
         if message.name == $user.data('name')
           toastr.info(_.escape(message.text), title)
         else
@@ -75,11 +78,8 @@ $ ->
 
       # new message?
       doc.on 'change', (op)=>
-        _(op).each (val, key)=>
-          name = val.li.name
-          text = val.li.text
-          time = val.li.time
-          show_chat_message({name:name, text:text, time:time}) if val.p[0] == 'chat'
+        _(op).each (val)=>
+          show_chat_message(name: val.li.name, text: val.li.text, time: moment(val.li.time)) if val.p[0] == 'chat'
 
       $chat_input.on 'keydown', (event)=>
         if event.keyCode == 13 || event.keyCode == 27
@@ -87,7 +87,7 @@ $ ->
           message = {
             name: $user.data('name'),
             text: $chat_input.val(),
-            time: moment().format('H:mm')
+            time: moment().unix()
           }
           chat.insert(0, message) if event.keyCode == 13 && $chat_input.val('') != ''
           $chat_input.val('').focus()
