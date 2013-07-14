@@ -18,8 +18,9 @@
         %h1
           = link_to :root do
             = image_tag 'doggytag_logo_small.png'
-          %span.brand= @title[:black]
-          %span.doggy-blue= @title[:blue]
+          %span#page-title
+            %span.brand= @title[:black]
+            %span.doggy-blue= @title[:blue]
 
         = render 'layouts/flash'
 

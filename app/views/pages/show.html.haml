@@ -1,10 +1,11 @@
 - set_title @page.name
 
-#chat{ style: 'display:none' }
+#chat
   %input{ type: 'text', placeholder: 'Nachricht schreiben' }
   %a{ href: '#' } Verlauf löschen
 
-#user{ 'data-name' => @user.name, style: 'didsplay:none' }
+#user.hide{ 'data-name' => @user.name }
+#page.hide{ 'data-token' => @page.token, 'data-name' => @page.name }
 
 #online-users{ style: 'didsplay:none' }
   %span
@@ -77,5 +78,9 @@
             TODO ToDo Liste
           .footer
 
-:javascript
-  window.current_page_token = "channel_#{@page.token}";
+#edit-page-title.modal.hide.fade{ tabindex: -1 }
+  .modal-body
+    %input{ type: 'text' }
+  .modal-footer
+    %a.cancel{ href: '#', class: 'btn' } Abbrechen
+    %a.save{ href: '#', class: 'btn btn-primary' } Speichern

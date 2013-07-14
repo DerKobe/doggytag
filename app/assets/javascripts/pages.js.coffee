@@ -1,5 +1,7 @@
 $ ->
   if $('body#pages-show').length > 0
+    current_page_token = $('#page').data('token')
+
     editor = ace.edit('ace-editor')
 
     editor.setTheme('ace/theme/chrome')
@@ -10,7 +12,7 @@ $ ->
     # -------------
     # --- A C E ---
     # -------------
-    sharejs.open "text_#{window.current_page_token}", 'text', "#{$('body').data('host')}channel", (error, doc)->
+    sharejs.open "text_#{current_page_token}", 'text', "#{$('body').data('host')}channel", (error, doc)->
       doc.attach_ace editor
       editor.focus()
 
@@ -48,7 +50,7 @@ $ ->
     # ---------------
     # --- C H A T ---
     # ---------------
-    sharejs.open "chat_#{window.current_page_token}", 'json', "#{$('body').data('host')}channel", (error, doc)=>
+    sharejs.open "chat_#{current_page_token}", 'json', "#{$('body').data('host')}channel", (error, doc)=>
       $chat = $('#chat').show()
       $chat_input = $chat.find('input')
 
@@ -99,7 +101,7 @@ $ ->
     # ---------------------------------
     # --- O N L I N E   S T A T U S ---
     # ---------------------------------
-    sharejs.open "online_#{window.current_page_token}", 'json', "#{$('body').data('host')}channel", (error, doc)=>
+    sharejs.open "online_#{current_page_token}", 'json', "#{$('body').data('host')}channel", (error, doc)=>
       doc.set( { online: {} } ) if doc.get() == null
       online = doc.at('online')
 
@@ -126,3 +128,41 @@ $ ->
 
       update_online_status()
       setInterval(update_online_status, 5000);
+
+    # ---------------------------
+    # --- P A G E   T I T L E ---
+    # ---------------------------
+    $page_title = $('#page-title')
+    $modal = $('#edit-page-title')
+
+    # save new page name and change it live
+    save_page_title = (title)=>
+      # TODO save - get back escaped page name
+      $modal.modal('hide')
+      parts = title.split(' ')
+      black = $("<span class=\"brand\">#{parts.shift()} </span>")
+      blue  = $("<span class=\"doggy-blue\">#{parts.join(' ')}</span>")
+      $page_title.empty().append(black).append(blue)
+
+    # clicking page name triggers editing it
+    $page_title.on 'click', (event)=>
+      event.preventDefault()
+      $modal.find('input').val($('#page').data('name'))
+      $modal.modal('show')
+
+    # focus input on showing modal
+    $modal.on 'shown', => $modal.find('input').focus()
+
+    # cancel button
+    $modal.find('a.cancel').on 'click', => $modal.modal('hide')
+
+    # save button
+    $modal.find('a.save').on 'click', =>
+      save_page_title $modal.find('input').val()
+
+    # enter also saves
+    $modal.find('input').on 'keydown', (event)=>
+      if event.keyCode == 13
+        save_page_title $modal.find('input').val()
+      else if event.keyCode == 27
+        $modal.modal('hide')
