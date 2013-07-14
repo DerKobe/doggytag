@@ -1,12 +1,14 @@
 @import 'twitter/bootstrap/mixins';
 
+$doggy-blue: #4e90ff;
+
 .component {
   margin-bottom: 10px;
 
   .title-bar {
     color: #f8f8f8;
     height: 54px;
-    background-color: #4e90ff;
+    background-color: $doggy-blue;
     padding: 1px 20px 3px 15px;
     @include border-top-left-radius($radius: 15px);
     @include border-top-right-radius($radius: 15px);
@@ -20,7 +22,7 @@
       &:hover {
         text-decoration: none;
         i {
-          color: #4e90ff;
+          color: $doggy-blue;
           background-color: #f8f8f8;
           @include border-radius($radius: 20px);
         }
@@ -30,8 +32,8 @@
 
   .content-bar {
     clear: both;
-    border-left: 1px solid #4e90ff;
-    border-right: 1px solid #4e90ff;
+    border-left: 1px solid $doggy-blue;
+    border-right: 1px solid $doggy-blue;
     background-color: #f8f8f8;
     padding: 10px 10px 0px;
 
@@ -51,9 +53,9 @@
   .footer {
     height:15px;
     background-color: #f8f8f8;
-    border-left: 1px solid #4e90ff;
-    border-right: 1px solid #4e90ff;
-    border-bottom: 1px solid #4e90ff;
+    border-left: 1px solid $doggy-blue;
+    border-right: 1px solid $doggy-blue;
+    border-bottom: 1px solid $doggy-blue;
     @include border-bottom-left-radius($radius: 15px);
     @include border-bottom-right-radius($radius: 15px);
   }
@@ -106,6 +108,10 @@
 
     .label {
       margin-right: 2px;
+
+      &.label-info {
+        background-color: $doggy-blue;
+      }
     }
   }
 }
