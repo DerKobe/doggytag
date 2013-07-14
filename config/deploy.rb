@@ -1,5 +1,7 @@
 require 'bundler/capistrano'
 
+load 'deploy/assets'
+
 set :user, 'doggy'
 set :domain, '185.21.100.187'
 set :applicationdir, '/var/www/doggytag'

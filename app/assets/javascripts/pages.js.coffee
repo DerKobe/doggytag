@@ -7,7 +7,7 @@ $ ->
     editor.getSession().setUseWrapMode(true)
     editor.renderer.setShowGutter(false)
 
-    sharejs.open "text_#{window.current_page_token}", 'text', 'http://doggytag.net:8000/channel', (error, doc)->
+    sharejs.open "text_#{window.current_page_token}", 'text', "#{$('body').data('host')}channel", (error, doc)->
       doc.attach_ace editor
       editor.focus()
 
@@ -39,12 +39,12 @@ $ ->
 
         $target.parent().find('i').toggle()
 
-    sharejs.open "chat_#{window.current_page_token}", 'json', 'http://doggytag.net:8000/channel', (error, doc)->
+    # user data
+    $user = $('#user')
+
+    sharejs.open "chat_#{window.current_page_token}", 'json', "#{$('body').data('host')}channel", (error, doc)=>
       $chat = $('#chat').show()
       $chat_input = $chat.find('input')
-
-      # user data
-      $user = $('#user')
 
       # options for that messages
       toastr.options = {
@@ -69,12 +69,11 @@ $ ->
 
       # new message?
       doc.on 'change', (op)=>
-        name = op[0].li.name
-        text = op[0].li.text
-        time = op[0].li.time
-
-        if op?[0].p[0] == 'chat'
-          show_chat_message({name:name, text:text, time:time})
+        _(op).each (i)=>
+          name = op[i].li.name
+          text = op[i].li.text
+          time = op[i].li.time
+          show_chat_message({name:name, text:text, time:time}) if op?[i].p[0] == 'chat'
 
       $chat_input.on 'keydown', (event)=>
         if event.keyCode == 13 || event.keyCode == 27
@@ -90,3 +89,30 @@ $ ->
       $chat.find('a').on 'click', (event)->
         event.preventDefault()
         toastr.clear()
+
+    sharejs.open "online_#{window.current_page_token}", 'json', "#{$('body').data('host')}channel", (error, doc)=>
+      doc.set( { online: {} } ) if doc.get() == null
+      online = doc.at('online')
+
+      $status_bar = $('#online-users')
+      $status_bar.show()
+
+      # update users online status bar
+      render_users_online_status_bar = =>
+        statuses = online.get()
+        $user_labels = $status_bar.find('.users')
+        $user_labels.empty()
+        _(statuses).each (timestamp, name)=>
+          now = moment().format('X')
+          if timestamp > now - 2
+            $user_labels.append( $("<div class=\"label label-success\">#{name}</div>") )
+
+      update_online_status = =>
+        user = $user.data('name')
+        my_status = online.at(user)
+        my_status.set(moment().format('X'))
+
+      update_online_status()
+      setInterval(update_online_status, 1000);
+
+      doc.on 'change', render_users_online_status_bar

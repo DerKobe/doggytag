@@ -88,3 +88,24 @@
   font-weight: bold;
   font-style: italic;
 }
+
+#online-users {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  background-color: #e3e3e3;
+  border: 1px solid #bababa;
+  padding: 5px 12px 5px 5px ;
+  @include border-top-right-radius($radius: 15px);
+
+  .users {
+    display: inline-block;
+    position: relative;
+    top: -1px;
+
+    .label {
+      margin-right: 2px;
+    }
+  }
+}

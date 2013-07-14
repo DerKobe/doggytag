@@ -13,7 +13,7 @@ var options = {
         type: 'redis'
     },
     browserChannel: {
-        cors: 'http://doggytag.net'
+        cors: '*'
     }
 }; // See docs for options. {type: 'redis'} to enable persistance.
 

@@ -12,7 +12,7 @@
     = javascript_include_tag "#{host}share/ace.js"
     = javascript_include_tag 'application'
 
-  %body{ id: "#{params[:controller]}-#{params[:action]}", class: "controller-#{params[:controller]} action-#{params[:action]}" }
+  %body{ id: "#{params[:controller]}-#{params[:action]}", class: "controller-#{params[:controller]} action-#{params[:action]}", 'data-host' => host }
     - unless browser.ie?# || ( browser.firefox? && !browser.modern? )
       %center
         %h1
