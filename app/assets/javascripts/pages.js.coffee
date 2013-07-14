@@ -108,6 +108,8 @@ $ ->
             label = if name == $user.data('name') then 'info' else 'success'
             $user_labels.append( $("<div class=\"label label-#{label}\">#{name}</div>") )
 
+      doc.on 'change', render_users_online_status_bar
+
       update_online_status = =>
         user = $user.data('name')
         my_status = online.at(user)
@@ -115,5 +117,3 @@ $ ->
 
       update_online_status()
       setInterval(update_online_status, 5000);
-
-      doc.on 'change', render_users_online_status_bar
