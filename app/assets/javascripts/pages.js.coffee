@@ -7,6 +7,9 @@ $ ->
     editor.getSession().setUseWrapMode(true)
     editor.renderer.setShowGutter(false)
 
+    # -------------
+    # --- A C E ---
+    # -------------
     sharejs.open "text_#{window.current_page_token}", 'text', "#{$('body').data('host')}channel", (error, doc)->
       doc.attach_ace editor
       editor.focus()
@@ -14,11 +17,11 @@ $ ->
     height_update_function = =>
       screen_length = editor.getSession().getScreenLength()
       screen_length = 15 if screen_length < 15
-      newHeight = screen_length * editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
+      new_height = screen_length * editor.renderer.lineHeight + editor.renderer.scrollBar.getWidth()
 
       $ace_editor = $('#ace-editor')
-      $ace_editor.height(newHeight.toString() + 'px')
-      $ace_editor.closest('.component').find('.content-bar').height((newHeight+13).toString() + 'px')
+      $ace_editor.height("#{new_height}px")
+      $ace_editor.closest('.component').find('.content-bar').height("#{new_height}px")
 
       editor.resize()
 
@@ -42,6 +45,9 @@ $ ->
     # user data
     $user = $('#user')
 
+    # ---------------
+    # --- C H A T ---
+    # ---------------
     sharejs.open "chat_#{window.current_page_token}", 'json', "#{$('body').data('host')}channel", (error, doc)=>
       $chat = $('#chat').show()
       $chat_input = $chat.find('input')
@@ -69,11 +75,11 @@ $ ->
 
       # new message?
       doc.on 'change', (op)=>
-        _(op).each (i)=>
-          name = op[i].li.name
-          text = op[i].li.text
-          time = op[i].li.time
-          show_chat_message({name:name, text:text, time:time}) if op?[i].p[0] == 'chat'
+        _(op).each (val, key)=>
+          name = val.li.name
+          text = val.li.text
+          time = val.li.time
+          show_chat_message({name:name, text:text, time:time}) if val.p[0] == 'chat'
 
       $chat_input.on 'keydown', (event)=>
         if event.keyCode == 13 || event.keyCode == 27
@@ -90,6 +96,9 @@ $ ->
         event.preventDefault()
         toastr.clear()
 
+    # ---------------------------------
+    # --- O N L I N E   S T A T U S ---
+    # ---------------------------------
     sharejs.open "online_#{window.current_page_token}", 'json', "#{$('body').data('host')}channel", (error, doc)=>
       doc.set( { online: {} } ) if doc.get() == null
       online = doc.at('online')
