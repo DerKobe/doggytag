@@ -21,6 +21,8 @@
           %span#page-title
             %span.brand= @title[:black]
             %span.doggy-blue= @title[:blue]
+            %span.input{ contenteditable: true }
+              #{@title[:black]} #{@title[:blue]}
 
         = render 'layouts/flash'
 

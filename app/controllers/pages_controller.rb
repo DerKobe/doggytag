@@ -21,6 +21,13 @@ class PagesController < ApplicationController
     redirect_to page_url(page.token)
   end
 
+  def update
+    page = Page.find_by(token: params[:token])
+    page.name = CGI::escapeHTML(params[:name])
+    page.save!
+    render json: { name: page.name }.to_json
+  end
+
   def pick_user
     get_available_users
     @user = User.new

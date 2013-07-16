@@ -133,36 +133,49 @@ $ ->
     # --- P A G E   T I T L E ---
     # ---------------------------
     $page_title = $('#page-title')
-    $modal = $('#edit-page-title')
 
     # save new page name and change it live
-    save_page_title = (title)=>
-      # TODO save - get back escaped page name
-      $modal.modal('hide')
+    set_page_title = (title)=>
+      title = _.str.trim(title)
       parts = title.split(' ')
       black = $("<span class=\"brand\">#{parts.shift()} </span>")
       blue  = $("<span class=\"doggy-blue\">#{parts.join(' ')}</span>")
-      $page_title.empty().append(black).append(blue)
+      input = $("<span class=\"input\" contenteditable=\"true\">#{title}</span>")
+      $page_title.empty().append(black).append(blue).append(input).show().find('span.input').hide()
+
+    set_page_title $('#page').data('name')
+
+    save_page_title = (title)=>
+      title = _.str.trim(title)
+      $.ajax(
+        url: "/pages/#{$('#page').data('token')}"
+        complete: (response)=>
+          set_page_title response.responseJSON.name
+        data: { name: title }
+        error: (response)=>
+          console.err response
+          set_page_title $('#page').data('name')
+        type: 'POST'
+      )
+      set_page_title(title)
 
     # clicking page name triggers editing it
-    $page_title.on 'click', (event)=>
-      event.preventDefault()
-      $modal.find('input').val($('#page').data('name'))
-      $modal.modal('show')
+    $page_title
+      .on('click', =>
+        $page_title.find('.brand, .doggy-blue').hide()
+        $page_title.find('span.input').show().focus()
 
-    # focus input on showing modal
-    $modal.on 'shown', => $modal.find('input').focus()
+      ).on('keydown', 'span.input', (event)->
+        if event.keyCode == 13
+          event.preventDefault()
+          $(event.target).blur()
+        else if event.keyCode == 27
+          set_page_title $('#page').data('name')
 
-    # cancel button
-    $modal.find('a.cancel').on 'click', => $modal.modal('hide')
+      ).on('paste', 'span.input', (event)->
+        event.preventDefault() if $(event.target).hasClass('input')
 
-    # save button
-    $modal.find('a.save').on 'click', =>
-      save_page_title $modal.find('input').val()
-
-    # enter also saves
-    $modal.find('input').on 'keydown', (event)=>
-      if event.keyCode == 13
-        save_page_title $modal.find('input').val()
-      else if event.keyCode == 27
-        $modal.modal('hide')
+      ).on('blur', 'span.input', (event)=>
+        event.preventDefault()
+        save_page_title(event.target.innerText)
+      )
