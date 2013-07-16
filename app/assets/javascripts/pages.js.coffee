@@ -177,5 +177,8 @@ $ ->
 
       ).on('blur', 'span.input', (event)=>
         event.preventDefault()
-        save_page_title(event.target.innerText)
+        if _.str.trim(event.target.innerText).length > 0
+          save_page_title(event.target.innerText)
+        else
+          set_page_title $('#page').data('name')
       )
