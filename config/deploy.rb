@@ -21,7 +21,7 @@ set :deploy_to, applicationdir
 
 default_run_options[:pty] = true
 
-after 'deploy:restart', 'deploy:cleanup'
+#after 'deploy:restart', 'deploy:cleanup'
 
 # Passenger
 namespace :deploy do
