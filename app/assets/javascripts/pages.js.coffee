@@ -165,7 +165,7 @@ $ ->
         $page_title.find('.brand, .doggy-blue').hide()
         $page_title.find('span.input').show().focus()
 
-      ).on('keydown', 'span.input', (event)->
+      ).on('keydown', 'span.input', (event)=>
         if event.keyCode == 13
           event.preventDefault()
           $(event.target).blur()
