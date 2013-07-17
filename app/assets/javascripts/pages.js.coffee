@@ -141,7 +141,8 @@ $ ->
       black = $("<span class=\"brand\">#{parts.shift()} </span>")
       blue  = $("<span class=\"doggy-blue\">#{parts.join(' ')}</span>")
       input = $("<span class=\"input\" contenteditable=\"true\">#{title}</span>")
-      $page_title.empty().append(black).append(blue).append(input).show().find('span.input').hide()
+      $page_title.html('').append(black).append(blue).append(input).show().find('span.input').hide()
+      $('#page').data('name', title)
 
     set_page_title $('#page').data('name')
 
@@ -170,7 +171,8 @@ $ ->
           event.preventDefault()
           $(event.target).blur()
         else if event.keyCode == 27
-          set_page_title $('#page').data('name')
+          event.preventDefault()
+          $page_title.find('span.input').html( $('#page').data('name') ).blur()
 
       ).on('paste', 'span.input', (event)->
         event.preventDefault() if $(event.target).hasClass('input')
