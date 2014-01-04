@@ -6,12 +6,14 @@ set :user, 'doggy'
 set :domain, '185.21.100.187'
 set :applicationdir, '/var/www/doggytag'
 
+ssh_options[:forward_agent] = true
+
 role :web, domain
 role :app, domain
 role :db, domain, primary: true
 
 set :application, 'DoggyTag'
-set :repository, 'git@gitlab.sys.mixxt.net:kobe/koeter_tag.git'
+set :repository, 'git@github.com:DerKobe/doggytag.git'
 set :scm, :git
 set :branch, 'master'
 set :default_environment, { PATH: '/home/doggy/.rbenv/shims:$PATH' }
