@@ -21,6 +21,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'haml-rails'
 gem 'execjs'
+gem 'therubyracer'
 
 group :development do
   gem "better_errors"
